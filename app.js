@@ -4,11 +4,13 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 // Middlewares
 
+app.use(express.json());
+
 // import routes
 const postsRoute = require("./routes/posts");
 app.use("/posts", postsRoute);
 
-
+//Routes
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
